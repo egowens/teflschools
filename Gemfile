@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 
 gem 'rails', '4.1.5'
+gem 'bootstrap-sass'
+gem 'sprockets'
 
 group :development, :test do
   gem 'sqlite3'
