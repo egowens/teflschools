@@ -1,0 +1,11 @@
+<% provide(:title, 'Schools') %>
+<div class="container">
+  <div class="well">
+    <h1 id="school_list">All Schools</h1>
+    <% @schools.each do |school| %>
+      <li>
+        <%= link_to school.name, school %>
+      </li>
+    <% end %>
+  </div>
+</div>
