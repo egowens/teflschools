@@ -37,4 +37,17 @@ describe "Schools pages" do
     it{ should have_content("Add a new school") }
     it{ should have_title("TEFL Schools | New School") }
   end
+
+  describe "add a new school" do
+    before do
+      fill_in "Name",         with: "A-B-C TEFL"
+      fill_in "Address",      with: "123 Fake St. Europe City, Europe"
+      fill_in "Contact",      with: "Mr. T. Efl"
+      fill_in "Email",        with: "mail@abctefl.com"
+    end
+
+    it "should create a new school" do
+      expect{ click_button submit }.to change(School, :count).by(1)
+    end
+  end
 end

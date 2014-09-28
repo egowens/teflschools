@@ -8,5 +8,6 @@ class SchoolsController < ApplicationController
   end
 
   def new
+    @school = School.new
   end
 end

@@ -1,6 +1,29 @@
 <% provide(:title, "New School") %>
-<div class="container">
-  <div class="well">
-    <h1 id="new_school">Add a new school</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="well">
+      <h1 id="new_school">Add a new school</h1>
+
+      <%= form_tag do %>
+        <div class="form-group">
+          <%= label :name, "School Name" %>
+          <%= text_field :name, class: "form-control", id: "schoolNameField" %>
+        </div>
+        <div class="form-group">
+          <%= label :address, "School Address" %>
+          <%= text_field :address, class: "form-control", id: "schoolAddressField" %>
+        </div>
+        <div class="form-group">
+          <%= label :contact, "School Contact" %>
+          <%= text_field :contact, class: "form-control", id: "schoolContactField"%>
+        </div>
+        <div class="form-group">
+          <%= label :email, "School Email" %>
+          <%= text_field :email, class: "form-control", id: "schoolEmailField"%>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      <% end %>
+
+    </div>
   </div>
 </div>
