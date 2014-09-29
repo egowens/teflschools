@@ -2,6 +2,7 @@
 <div class="container">
   <div class="well">
     <h1 id="school_list">All Schools</h1>
+    <a class="btn btn-primary" id="add_school_button" href="/schools/new">Add a school</a>
     <% @schools.each do |school| %>
       <li>
         <%= link_to school.name, school %>

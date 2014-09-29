@@ -34,20 +34,28 @@ describe "Schools pages" do
   describe "new school page" do
     before{ visit new_school_path }
 
+    let(:submit){ "Create new school" }
+
     it{ should have_content("Add a new school") }
     it{ should have_title("TEFL Schools | New School") }
-  end
 
-  describe "add a new school" do
-    before do
-      fill_in "Name",         with: "A-B-C TEFL"
-      fill_in "Address",      with: "123 Fake St. Europe City, Europe"
-      fill_in "Contact",      with: "Mr. T. Efl"
-      fill_in "Email",        with: "mail@abctefl.com"
+    describe "with invalid information" do
+      it "should not create a new school" do
+        expect{ click_button submit }.not_to change(School, :count)
+      end
     end
 
-    it "should create a new school" do
-      expect{ click_button submit }.to change(School, :count).by(1)
+    describe "with valid information" do
+      before do
+        fill_in "School Name",         with: "A-B-C TEFL"
+        fill_in "School Address",      with: "123 Fake St. Europe City, Europe"
+        fill_in "School Contact",      with: "Mr. T. Efl"
+        fill_in "School Email",        with: "mail@abctefl.com"
+      end
+
+      it "should create a new school" do
+        expect{ click_button submit }.to change(School, :count).by(1)
+      end
     end
   end
 end
