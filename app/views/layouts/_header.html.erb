@@ -20,7 +20,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-          <li>Logged in as </br><%= current_user.email %></li>
+          <li id="navbar-user">Logged in as </br><%= current_user.email %></li>
           <li><%= link_to "Sign out", destroy_user_session_path(user_session), method: "delete" %></li>
         <% else %>
           <li><%= link_to "Sign in", new_user_session_path %></li>

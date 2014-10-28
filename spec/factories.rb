@@ -5,4 +5,9 @@ FactoryGirl.define do
     contact   "Mr. T Efl"
     email     "mail@abctefl.com"
   end
+
+  factory :user do
+    email     "Teacher@example.com"
+    password  "foobarbaz"
+  end
 end
