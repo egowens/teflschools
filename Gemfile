@@ -32,13 +32,14 @@ group :test do
   gem 'factory_girl_rails'
 end
 
+group :production do
+  gem 'pg'
+end
+
 group :doc do
   gem 'sdoc', '~> 0.4.0'
 end
 
-group :production do
-  gem 'pg'
-end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
