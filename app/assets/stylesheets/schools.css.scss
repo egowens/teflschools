@@ -3,6 +3,10 @@
 /*mixins and variables*/
 
 /*School list*/
+#add_school_button {
+  margin-top: 10px;
+}
+
 #school_list {
   list-style: none;
   margin: 10px 0 0 0;
@@ -14,3 +18,14 @@
     float: right;
   }
 }
+
+/*School show - made blue bubbles for the tags. Might add this as JS later when adding tags*/
+/*
+.school_tags {
+  background-color: #CDF;
+  color: #222;
+  padding: 1px 4px 1px 4px;
+  border: 1px solid;
+  border-radius: 9px;
+}
+*/

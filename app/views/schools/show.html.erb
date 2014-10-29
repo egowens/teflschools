@@ -6,6 +6,6 @@
     Address: <%= @school.address %></br>
     Contact: <%= @school.contact %></br>
     Email:   <%= @school.email %></br>
-    Tags:    <%= @school.tag_list %>
+    Tags:    <%= raw @school.tag_list.map { |t| link_to t, tag_path(t), class: "school_tags" }.join(', ') %>
   </p>
 </div>

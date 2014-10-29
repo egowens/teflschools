@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :admins
   devise_for :users
   #Home page
   root 'static_pages#home'
@@ -10,4 +9,8 @@ Rails.application.routes.draw do
 
   #School Pages
   resources :schools
+
+  #tag handlers
+  get 'tags/:tag', to: 'schools#index', as: :tag
+
 end
