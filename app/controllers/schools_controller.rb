@@ -1,6 +1,6 @@
 class SchoolsController < ApplicationController
 
-  before_action :admin_user, only: [:create, :destroy]
+  before_action :admin_user, only: [:new, :create, :destroy]
 
   def index
     if params[:tag]
