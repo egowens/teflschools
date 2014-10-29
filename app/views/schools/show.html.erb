@@ -2,8 +2,10 @@
 <div class="well">
   <h1 id="school_name"><%= @school.name %></h1>
   <p>
+  Website: <a href = "http://<%= @school.website %>"><%= @school.website %></a></br>
     Address: <%= @school.address %></br>
     Contact: <%= @school.contact %></br>
-    Email:   <%= @school.email %>
+    Email:   <%= @school.email %></br>
+    Tags:    <%= @school.tag_list %>
   </p>
 </div>

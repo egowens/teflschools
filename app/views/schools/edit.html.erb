@@ -1,0 +1,14 @@
+<% provide(:title, "Edit School") %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h1 id="edit_school_title">Edit school info</h1>
+    <div class="well" id="edit_school_well">
+
+      <%= form_for(@school) do |f| %>
+        <%= render 'fields', f: f %>
+        <%= f.submit "Update", class: "btn btn-lg btn-primary" %>
+      <% end %>
+
+    </div>
+  </div>
+</div>

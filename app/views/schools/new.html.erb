@@ -5,25 +5,7 @@
       <div class="well" id="new_school_well">
 
       <%= form_for(@school) do |f| %>
-        <%= render 'shared/school_error_messages' %>
-
-        <div class="form-group">
-          <%= f.label :name, "School Name" %>
-          <%= f.text_field :name, class: "form-control"%>
-        </div>
-        <div class="form-group">
-          <%= f.label :address, "School Address" %>
-          <%= f.text_field :address, class: "form-control" %>
-        </div>
-        <div class="form-group">
-          <%= f.label :contact, "School Contact" %>
-          <%= f.text_field :contact, class: "form-control" %>
-        </div>
-        <div class="form-group">
-          <%= f.label :email, "School Email" %>
-          <%= f.text_field :email, class: "form-control" %>
-        </div>
-
+        <%= render 'fields', f: f %>
         <%= f.submit "Create new school", class: "btn btn-large btn-primary" %>
       <% end %>
 
