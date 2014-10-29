@@ -1,4 +1,7 @@
 class SchoolsController < ApplicationController
+
+  before_action :admin_user, only: [:create, :destroy]
+
   def index
     if params[:tag]
       @schools = School.tagged_with(params[:tag])
@@ -37,5 +40,9 @@ class SchoolsController < ApplicationController
 
   def school_params
     params.require(:school).permit(:name, :website, :address, :contact, :email, :tag_list)
+  end
+
+  def admin_user
+    redirect_to(root_url) unless current_user.try(:admin?)
   end
 end
