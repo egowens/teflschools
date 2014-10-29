@@ -22,6 +22,13 @@ class SchoolsController < ApplicationController
     end
   end
 
+  def destroy
+    @school = School.find_by(id: params[:id])
+    @school.destroy
+    flash[:warning] = "The school has been removed"
+    redirect_to root_url
+  end
+
   private
 
   def school_params

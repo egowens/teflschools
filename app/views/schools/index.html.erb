@@ -1,11 +1,14 @@
 <% provide(:title, 'Schools') %>
-<div class="container">
-  <div class="well">
-    <h1 id="school_list">All Schools</h1>
-    <a class="btn btn-primary" id="add_school_button" href="/schools/new">Add a school</a>
+<div class="well">
+  <h1 id="school_list">All Schools</h1>
+  <a class="btn btn-primary" id="add_school_button" href="/schools/new">Add a school</a>
+  <div id="school_list">
     <% @schools.each do |school| %>
       <li>
         <%= link_to school.name, school %>
+        <%= link_to "delete", school, id: "delete_school", method: :delete,
+                                      data: { confirm: "Are you sure?" },
+                                      title: school.name %>
       </li>
     <% end %>
   </div>
